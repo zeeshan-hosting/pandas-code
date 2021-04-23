@@ -1,0 +1,310 @@
+pandas:
+pandas is a library is used to work with data set
+
+pandas stands for panel data and python data analysis
+
+by using pandas we can perform the folowing operations:
+
+data analysis
+
+data cleaning
+
+data exploring
+
+data manipluation
+
+what we have to learn as a data scientist in pandas:
+
+pandas series
+
+what is mean by data frame & how to work with data frames:
+
+for working with pandas we have a library called "pandas"
+
+how can we use pandas in the code:
+
+import pandas as pd
+
+example-1:
+
+import pandas as pd
+data1={'id':[101,102,103],
+'name':["amit","zeeshan","saikumar"],
+'salary':[100000,200000,300000]}
+print(data1)
+mydataframe=pd.DataFrame(data1)#by using dataframe method,to create any data frame
+print(mydataframe)
+
+example-2:
+
+import pandas as pd
+a=[1,2,3,4,5,6,7,8,9]
+x=pd.Series(a)
+print(x)
+
+
+
+example-3:
+
+import pandas as pd
+a=['a','b','c','d','e']
+x=pd.Series(a)
+print(x)
+
+
+example-4:
+
+import pandas as pd
+a=[1.2,3.2,4.5,6.3]
+x=pd.Series(a)
+print(x)
+
+
+example-5:
+
+import pandas as pd
+a=[1.2,3.2,4.5,6.3]
+x=pd.Series(a)
+#print(x)
+print(x[0])
+print(x[0:2])
+
+
+
+example-6:
+
+import pandas as pd
+a=[1.2,3.2,4.5,6.3]
+x=pd.Series(a,index=["x","y","z","r"])
+print(x)
+print(x[0])
+print(x["x"])
+print(x['x'])
+
+
+example-7:
+
+import pandas as pd
+a={"id":101,"name":"sairam","location":"hyderabad"}
+x=pd.Series(a)
+print(x)
+
+
+example-8:
+
+import pandas as pd
+data={
+      "calories":[1000,2000,3000],
+      "duration":[100,200,300],
+      }
+x=pd.DataFrame(data)
+print(x)
+
+example-10:
+
+import pandas as pd
+data={
+      "calories":[1000,2000,3000],
+      "duration":[100,200,300],
+       "duration1":[100,200,300],
+       "duration2":[100,200,300],
+       "duration3":[100,200,300]
+      }
+x=pd.DataFrame(data)
+print(x)
+
+example-11:
+
+import pandas as pd
+data={
+      "calories":[1000,2000,3000],
+      "duration":[100,200,300],
+      
+      }
+x=pd.DataFrame(data)
+#print(x)
+print(x.loc[0])#loc is used to get individual row from the data frame
+print(x.loc[0:2])
+print(x.loc[[0,1]])
+
+
+example-12:
+
+import pandas as pd
+data={
+      "calories":[1000,2000,3000],
+      "duration":[100,200,300],
+      
+      }
+x=pd.DataFrame(data)
+#print(x)
+print(x.loc[0])#loc is used to get individual row from the data frame
+print(x.loc[0:2])
+print(x.loc[[0,1,2]])
+
+
+example-13:
+
+import pandas as pd
+data={
+      "calories":[1000,2000,3000],
+      "duration":[100,200,300],
+      
+      }
+x=pd.DataFrame(data,index=["x","y","z"])
+print(x)
+
+example-14:
+
+import pandas as pd
+data={
+      "calories":[1000,2000,3000],
+      "duration":[100,200,300],
+      
+      }
+x=pd.DataFrame(data,index=["x","y","z"])
+print(x.loc["x"])
+
+how to read json file:
+
+to read any json file using pandas,we have method called "read_json()"
+
+by using read_json, we can able to read any json file
+
+example-1:
+
+import pandas as pd
+x=pd.read_json('filename.json')
+print(x)
+
+
+
+how to read csv files:
+
+
+to read any csv file using pandas,we have method called "read_csv()"
+
+by using read_csv, we can able to read any csv file
+
+csv stands for comma saparated value
+
+example-1:
+
+import pandas as pd
+x=pd.read_csv('filename.csv')
+print(x)
+
+example-2:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+#print(x)
+#print(x.head())
+#print(x.head(3))
+print(x.head(6))
+
+example-3:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+#print(x)
+#print(x.tail())
+print(x.tail(2))
+print(x.tail(3))
+print(x.tail(4))
+
+example-4:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+print(x.info())
+
+
+example-5:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+x1=x.dropna()#dropna() is removing empty values
+print(x1)
+print(x1.info())
+
+example-6:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+x.dropna(inplace=True)#dropna() is removing empty values
+print(x)
+
+
+example-7:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+x.dropna(inplace=True)#dropna() is removing empty values
+print(x)
+
+
+example-8:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+x.fillna(10000,inplace=True)#dropna() is removing empty values
+print(x)
+
+
+
+
+example-9:
+import pandas as pd
+x=pd.read_csv('Data.csv')
+x["Age"].fillna(50,inplace=True)#dropna() is removing empty values
+x["Salary"].fillna(100000,inplace=True)#dropna() is removing empty values
+print(x)
+
+
+
+example-10:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+mean1=x["Age"].mean()#mean() is used to find mean
+mean2=x["Salary"].mean()
+x["Age"].fillna(mean1,inplace=True)#dropna() is removing empty values
+x["Salary"].fillna(mean2,inplace=True)#dropna() is removing empty values
+print(x)
+
+
+example-11:
+
+import pandas as pd
+x=pd.read_csv('Data.csv')
+m1=x["Age"].median()#mean() is used to find mean
+m2=x["Salary"].median()
+x["Age"].fillna(m1,inplace=True)#dropna() is removing empty values
+x["Salary"].fillna(m2,inplace=True)#dropna() is removing empty values
+print(x)
+
+
+
+
+
+how to do analysis on data
+
+how to clean the data:
+
+clean empty cells
+
+clean wrong format data
+
+clean wrong data
+
+removing duplicates
+
+stastical analysis with pandas
+
+
+
+
+
+
+
